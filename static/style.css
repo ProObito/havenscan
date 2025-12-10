@@ -50,3 +50,140 @@ nav {
 .chapter-img { width: 100%; max-width: 800px; display: block; margin: 0 auto; }
 
 footer { text-align: center; padding: 20px; background: #111; margin-top: 50px; }
+
+
+/* --- Webtoon Detail Page Styles --- */
+
+/* Header Container with Blur */
+.webtoon-header {
+    position: relative;
+    padding: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #000;
+}
+
+.blur-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px) brightness(0.3); /* Dhundhla aur dark effect */
+    z-index: 0;
+}
+
+.webtoon-info-box {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Cover Image */
+.cover-wrapper .main-cover {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 2px solid #333;
+}
+
+/* Info Text */
+.info-text {
+    flex: 1;
+    min-width: 300px;
+    color: white;
+}
+
+.manga-title {
+    font-size: 32px;
+    margin: 0 0 10px 0;
+    color: var(--accent); /* Pink/Red color */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.meta-tags {
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: rgba(255,255,255,0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.tag.status { background: #4cd137; color: #000; font-weight: bold; }
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+    background: rgba(0,0,0,0.4);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* Buttons */
+.action-buttons { display: flex; gap: 10px; }
+.btn-read {
+    padding: 10px 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.btn-read.start { background: var(--accent); }
+.btn-read.last { background: #333; border: 1px solid #555; }
+.btn-read:hover { transform: scale(1.05); }
+
+/* Chapter List Styles */
+.chapter-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.chapter-section h3 { margin-top: 0; border-bottom: 1px solid #444; padding-bottom: 10px; }
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.chapter-item:hover {
+    background: rgba(255,255,255,0.1);
+    border-left: 3px solid var(--accent);
+    padding-left: 20px; /* Slight slide effect */
+}
+
+.chap-date { color: #777; font-size: 12px; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .webtoon-info-box { flex-direction: column; align-items: center; text-align: center; }
+    .description { text-align: left; }
+    .action-buttons { justify-content: center; }
+}
