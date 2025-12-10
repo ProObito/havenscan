@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if current_user.is_authenticated and history %}
+    <h2 class="section-title">Continue Reading (History)</h2>
+    <div class="grid">
+        {% for item in history %}
+        <div class="card">
+            <img src="{{ item.cover_image }}" alt="Cover">
+            <h3>{{ item.title }}</h3>
+            <a href="/webtoon/{{ item.id }}" class="btn">Read Again</a>
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    {% endif %}
+
+    <h2 class="section-title">Recently Added</h2>
+    <div class="grid">
+        {% for webtoon in webtoons %}
+        <div class="card">
+            <img src="{{ webtoon.cover_image }}" alt="Cover">
+            <h3>{{ webtoon.title }}</h3>
+            <a href="/webtoon/{{ webtoon.id }}" class="btn">Read Now</a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
