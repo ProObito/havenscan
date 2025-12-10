@@ -1,0 +1,52 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --accent: #ff4757;
+}
+
+body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --card-bg: #f4f4f4;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    transition: 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #000;
+    align-items: center;
+}
+
+.logo { font-size: 24px; font-weight: bold; color: var(--accent); }
+.links a { color: white; text-decoration: none; margin-left: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card img { width: 100%; border-radius: 5px; height: 250px; object-fit: cover; }
+.btn { display: block; background: var(--accent); color: white; padding: 8px; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+
+.chapter-img { width: 100%; max-width: 800px; display: block; margin: 0 auto; }
+
+footer { text-align: center; padding: 20px; background: #111; margin-top: 50px; }
